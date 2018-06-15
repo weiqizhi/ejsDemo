@@ -1,0 +1,86 @@
+Attend 下考勤报日报表 frmAttendHolidInfo.cs + .resx + Designer.cs  
+  
+
+databases 下udp
+
+BuildingManage 下，卡片管理  fmOfflineCardList1.cs + Design.cs
+
+
+
+
+
+
+
+
+
+
+86:18:23:d0:a4:86:a2:77:96:86:79:79:79:87:c6:86:a6:86:3c:5e:47:50:31:2d:79:79:86:86:86:86:8a:41:1b
+
+9E A5 B8 22 00 24 F1 10 00 FF FF FF 01 40 00 20 00 
+BA D8 C1 D6 B7 AB FF FF 00 00 00 00 
+0D 29 9D 
+
+9E A5 74 22 00 24 F1 10 00 FF FF FF 01 40 00 20 00 BA D8 C1 D6 B7 AB FF FF 00 00 00 00 0C E5 9D 
+
+9E A5 
+5B 
+22 
+00 24 F1 
+10 00 
+FF FF FF 
+01 40   命令
+00 20  数据长度
+00   通讯标识
+BA D8 C1 D6 B7 AB FF FF 00 00 00 00 
+0C CC 9D 
+
+
+8E 5A 
+3F 
+24 
+00 23 60 
+10 00 
+FF FF FF 
+01 48    命令符
+00 41 	数据长度
+01	通讯标识 
+08 25 10 0F 02 C0 A8 1F 22 12 34 56 78 90 AB 9C 40 12 34 56 78 90 AB 00 00 C0 A8 1F 1B D8 CB 8A E0 8C 40 FB 24 D8 CB 8A E0 8C 40 00 00 17 4A 8D 
+
+
+8E 5A 
+00 
+24 
+00 23 60 
+10 00 
+FF FF FF 
+01 40    命令符
+00 2B 
+14 
+00 00 08 92   记录条数
+7D E5 99 45   卡号
+65	       记录类型 
+01 22 7D 86 C0 00 01 C2 6E 00 00 08 93 0F 0C 1C 8D 
+
+string strSql = "SELECT 0 as ColSel,cMacId,cMacSn,vConnType,vIP,vCom,vExposition,vAreaName FROM MJ_MacInfo M,Sys_Area WHERE (LEFT(cMacSn,2)=21 or LEFT(cMacSn,2)=22 or LEFT(cMacSn,2)=24) AND Sys_Area.vAreaID=M.vAddress " + PublicFunction.GetStrCondition("doormj") + " ORDER BY cMacId";
+            
+
+string strSql = "SELECT 0 as ColSel,cMacId,cMacSn,vConnType,vIP,vCom,vExposition,vAreaName FROM MJ_MacInfo,Sys_Area WHERE LEFT(cMacSn,1)=5 AND Sys_Area.vAreaID=MJ_MacInfo.vAddress " +PublicFunction.GetStrCondition("doormj") + " ORDER BY cMacId";
+            
+
+
+
+15012952408
+"select count(1) from MJ_MacPower MP,Employee AS E,MJ_MacInfo AS M WHERE left(MP.cDoorID,5)=M.cMacId \r\n                            AND LEFT(M.cMacSN,2) IN ('21','22','24') and MP.vEmpID=E.vEmp_id and (E.vEmp_id='12321' or E.vEmp_name='12321')"
+
+
+"select count(1) from MJ_MacPower MP,Employee AS E,MJ_MacInfo AS M WHERE left(MP.cDoorID,5)=M.cMacId \r\n                            AND LEFT(M.cMacSN,2) IN ('21','22','24') and MP.vEmpID=E.vEmp_id"
+
+
+"select count(1) from MJ_MacPower MP,Employee AS E,MJ_MacInfo AS M WHERE left(MP.cDoorID,5)=M.cMacId \r\n                            AND LEFT(M.cMacSN,2) IN ('21','22','24') and MP.vEmpID=E.vEmp_id and (E.vEmp_id='2' or E.vEmp_name='2')"
+
+
+"select count(1) from MJ_MacPower MP,Employee AS E,MJ_MacInfo AS M WHERE left(MP.cDoorID,5)=M.cMacId \r\n                            AND LEFT(M.cMacSN,2) IN ('21','22','24') and MP.vEmpID=E.vEmp_id and (E.vEmp_id='2' or E.vEmp_name='2') and MP.cDoorId='M0001-1'"
+
+"select count(1) from MJ_MacPower MP,Employee AS E,MJ_MacInfo AS M WHERE left(MP.cDoorID,5)=M.cMacId \r\n                            AND LEFT(M.cMacSN,2) IN ('21','22','24') and MP.vEmpID=E.vEmp_id and (E.vEmp_id='2' or E.vEmp_name='2') and MP.cDoorId='M0002-1'"
+
+"select count(1) from MJ_MacPower MP,Employee AS E,MJ_MacInfo AS M WHERE left(MP.cDoorID,5)=M.cMacId \r\n                            AND LEFT(M.cMacSN,2) IN ('21','22','24') and MP.vEmpID=E.vEmp_id and (E.vEmp_id='2' or E.vEmp_name='2') and MP.cDoorId='M0002-1'"

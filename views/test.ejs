@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+	<link rel="stylesheet" href="/javascripts/bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="/javascripts/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/javascripts/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src = "/javascripts/mytest.js"></script>
+	
+	<!--以下是使用bootstrap-table插件 -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+	<!-- Latest compiled and minified Locales -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/locale/bootstrap-table-zh-CN.min.js"></script>
+	<!--以下是使用toast.js插件 -->
+	<link href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+	</head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+	<p>this is a test</p>
+	<!--测试bootstrap-->
+	<ul class="nav nav-pills">
+	  <li role="presentation" class="active"><a href="#">Home</a></li>
+	  <li role="presentation"><a href="#">Profile</a></li>
+	  <li role="presentation"><a href="#">Messages</a></li>
+	</ul>
+	<div style="margin:5px 5px">
+		<button type="button" class="btn btn-primary" id = "mybutton">please push</button>
+	</div>
+	<p id="hideP">push button will hide</p>
+	<p>test post data</p>
+	<button id="pd" type="button" class="btn btn-info">交互</button>
+	<button id="jumpTo" type="button" class="btn btn-primary">页面跳转</button>
+	<button id="jumpTo2" type="button" class="btn btn-info">后台控制页面跳转</button>
+	<a href="/test/jump">链接跳转</a>
+	<!--文件上传 -->
+	<form class="form-signin" role="form" method="post" enctype="multipart/form-data" action="https://9ncf77oj.qcloud.la/weapp/upload">
+		<h2>上传文件</h2>
+		<input id="fulAvatar" name="fulAvatar" type="file" />
+		<br/>
+		<button id="btnSub" class="btn btn-primary" type="submit">上传</button>
+	</form>
+     
+	<!--file upload end -->
+	<!--数据表格 -->
+	<div id = "toolbar">
+		<p>
+			<input type = "text" id ="searchInput" class = "form-control" style = "width:200px;float:left"></input>
+			<button type = "button" style = "margin-left:5px" class = "btn btn-primary" id = "search">搜索</button>
+		</p>
+		
+	</div>
+	<table id = "table" data-pagination="true"  
+      
+	</table>
+	
+  </body>
+  
+</html>
